@@ -4,7 +4,7 @@ import Card from '../components/Card.astro';
 
 import fs from 'fs';
 import yaml from 'js-yaml';
-import EventCard from '../components/EventCard.jsx';
+import EventCard from '../components/EventCard.tsx';
 
 const eventsFile = fs.readFileSync('./data/events.yaml', 'utf-8');
 const events = yaml.load(eventsFile);
