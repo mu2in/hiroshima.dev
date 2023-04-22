@@ -1,0 +1,10 @@
+# data/events.yaml
+- title: "イベント1"
+  date: "2023-04-01"
+  location: "東京"
+- title: "イベント2"
+  date: "2023-04-15"
+  location: "大阪"
+- title: "イベント3"
+  date: "2023-04-20"
+  location: "広島"
