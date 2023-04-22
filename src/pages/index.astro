@@ -1,14 +1,20 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+
+import fs from 'fs';
+import yaml from 'js-yaml';
+import EventCard from '../components/EventCard.jsx';
+
+const eventsFile = fs.readFileSync('./data/events.yaml', 'utf-8');
+const events = yaml.load(eventsFile);
 ---
 
 <Layout title="Welcome to hiroshima.dev">
 	<main>
 		<h1>Welcome to <span class="text-gradient">hiroshima.dev</span></h1>
 		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
+			<code>hiroshima.dev</code> is a portal site that compiles event information for IT study groups in Hiroshima.
 		</p>
 		<ul role="list" class="link-card-grid">
 			<Card
@@ -32,6 +38,11 @@ import Card from '../components/Card.astro';
 				body="Come say hi to our amazing Discord community. ❤️"
 			/>
 		</ul>
+		<div>
+			{events.map((event) => (
+				<EventCard event={event} />
+			))}
+		</div>
 	</main>
 </Layout>
 
