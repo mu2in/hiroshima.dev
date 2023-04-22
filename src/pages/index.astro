@@ -16,28 +16,6 @@ const events = yaml.load(eventsFile);
 		<p class="instructions">
 			<code>hiroshima.dev</code> is a portal site that compiles event information for IT study groups in Hiroshima.
 		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
 		<div>
 			{events.map((event) => (
 				<EventCard event={event} />
@@ -82,11 +60,5 @@ const events = yaml.load(eventsFile);
 	}
 	.instructions strong {
 		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
 	}
 </style>
